@@ -1,0 +1,12 @@
+[mariadb]
+host-cache-size=0
+skip-name-resolve
+port = 3306
+user = mysql
+bind-address = 0.0.0.0
+datadir = /var/lib/mysql
+
+expire_logs_days=10
+
+[client-server]
+socket =/run/mariadb/mariadb.sock

@@ -5,7 +5,6 @@ port = 3306
 user = mysql
 bind-address = 0.0.0.0
 datadir = /var/lib/mysql
-
 expire_logs_days=10
 
 [client-server]

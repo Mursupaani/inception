@@ -26,7 +26,8 @@ if [ ! -f "$WP_PATH/wp-settings.php" ]; then
 	php -d memory_limit=-1 /usr/local/bin/wp core download --allow-root
 fi
 
-if [ ! -f "$WP_PATH/wp-config.php" ]; then
+# if [ ! -f "$WP_PATH/wp-config.php" ]; then
+if ! wp core is-installed --allow-root; then
 	echo "Installing WordPress via WP-CLI..."
 
 	wp config create --allow-root \

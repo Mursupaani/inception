@@ -16,6 +16,4 @@ EXPOSE 3306
 
 ENTRYPOINT ["mariadb_script.sh"]
 
-USER mysql
-
 CMD ["/usr/bin/mariadbd", "--defaults-file=/etc/my.cnf.d/mariadb_config.cnf"]

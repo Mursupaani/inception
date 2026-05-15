@@ -8,6 +8,12 @@ all:
 	mkdir -p $(WORDPRESS_DIR)
 	docker compose -f $(DOCKER_COMPOSE) up --build
 
+up:
+	docker compose -f $(DOCKER_COMPOSE) up
+
+down:
+	docker compose -f $(DOCKER_COMPOSE) down
+
 fclean:
 	docker compose -f $(DOCKER_COMPOSE) down -v --rmi all --remove-orphans
 	sudo rm -rf /home/anpollan/data/mariadb/
@@ -15,4 +21,4 @@ fclean:
 
 re: fclean all
 
-.PHONY: all fclean re
+.PHONY: all fclean re up down

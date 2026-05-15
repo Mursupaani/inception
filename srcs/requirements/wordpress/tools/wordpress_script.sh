@@ -1,4 +1,5 @@
 #!/bin/sh
+
 set -e
 
 WP_PATH="/var/www/html"
@@ -26,29 +27,34 @@ if [ ! -f "$WP_PATH/wp-settings.php" ]; then
 	php -d memory_limit=-1 /usr/local/bin/wp core download --allow-root
 fi
 
-# if [ ! -f "$WP_PATH/wp-config.php" ]; then
-if ! wp core is-installed --allow-root; then
-	echo "Installing WordPress via WP-CLI..."
-
+if [ ! -f "$WP_PATH/wp-config.php" ]; then
+	echo "Creating wp-config.php..."
 	wp config create --allow-root \
 		--dbname=$WORDPRESS_DB_NAME \
 		--dbuser=$WORDPRESS_DB_USER \
 		--dbpass=$WORDPRESS_DB_PASSWORD \
 		--dbhost=$WORDPRESS_DB_HOST
+fi
 
-	wp core install --allow-root --skip-email \
+if ! wp core is-installed --allow-root --url=$DOMAIN_NAME; then
+	echo "Installing WordPress via WP-CLI..."
+
+	wp core install --allow-root --skip-email --quiet \
 		--url=$DOMAIN_NAME \
 		--title=$WORDPRESS_TITLE \
 		--admin_user=$WORDPRESS_ADMIN \
 		--admin_password=$WORDPRESS_ADMIN_PASSWORD \
 		--admin_email=$WORDPRESS_ADMIN_EMAIL
 
-	wp user create $WORDPRESS_USER $WORDPRESS_USER_EMAIL --role=author --user_pass=$WORDPRESS_USER_PASSWORD --allow-root
+	wp user create $WORDPRESS_USER $WORDPRESS_USER_EMAIL \
+		--role=author \
+		--user_pass=$WORDPRESS_USER_PASSWORD \
+		--allow-root
 
-	chown -R 82:82 /var/www/html
     echo "WordPress setup complete."
 else
     echo "WordPress already initialized, skipping setup."
 fi
+chown -R 82:82 /var/www/html
 echo "Starting PHP-FPM..."
 exec php-fpm83 -F

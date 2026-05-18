@@ -29,8 +29,13 @@ To build and launch the project:
     make fclean
 
 ## Resources
-Docker Official Documentation: For understanding Docker Compose, volumes, and networks.
+Docker Official Documentation: Docker Compose, Secrets, Volumes, and Networks.
+https://docs.docker.com/compose/
+https://docs.docker.com/engine/swarm/secrets/
+https://docs.docker.com/engine/storage/volumes/
+https://docs.docker.com/compose/how-tos/networking/  
 
-NGINX Documentation: For configuring TLSv1.3 and FastCGI proxying.
+https://dev.to/alejiri/docker-nginx-wordpress-mariadb-tutorial-inception42-1eok  
+https://github.com/TanjaMenkovic/inception  
 
 AI Usage: AI was utilized during this project heavily to...

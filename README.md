@@ -22,8 +22,10 @@ To build and launch the project:
    ```bash
    make
 4. To stop the containers without destroying the data, run:
+   ```bash
     make down
 5. To completely remove the containers, networks and all persistnet data, run:
+   ```bash
     make fclean
 
 ## Resources

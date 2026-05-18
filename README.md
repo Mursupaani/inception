@@ -37,6 +37,7 @@ https://docs.docker.com/compose/how-tos/networking/
 
 dev.to Inception tutorial by alejiri:  
 https://dev.to/alejiri/docker-nginx-wordpress-mariadb-tutorial-inception42-1eok  
+  
 GitHub repo and guide for Inception tutorial by TanjaMenkovic:  
 https://github.com/TanjaMenkovic/inception  
 

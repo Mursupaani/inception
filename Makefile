@@ -29,4 +29,4 @@ check:
 
 re: fclean all
 
-.PHONY: all fclean re up down
+.PHONY: all up down clean fclean logs check re 

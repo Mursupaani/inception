@@ -11,7 +11,8 @@ This infrastructure provides a fully functional, secure web stack known as a LEM
 
 ## Starting and Stopping the Project
 To manage the infrastructure, use the provided `Makefile` located at the root of the project:
-* **Start the project:** `make` or `make up`
+* **Start the project for the first time:** `make` (Creates the containers from the images and runs the services)
+* **Start the project for the first time:** `make up` (If you have already created the containers, this starts the services) 
 * **Stop the project safely:** `make down` (Leaves your data intact)
 * **Wipe the project clean:** `make fclean` (WARNING: This deletes the database and website files!)
 
@@ -21,7 +22,7 @@ To manage the infrastructure, use the provided `Makefile` located at the root of
 
 ## Locating and Managing Credentials
 For security reasons, passwords are not stored in the repository. They are managed via Docker Secrets.
-If you need to change or view the passwords, look inside the `secrets/` folder at the root of the project:
+Create the following files and add your desired passwords. If you ever need to change or view the passwords, look inside the `secrets/` folder at the root of the project:
 * `secrets/db_password.txt`
 * `secrets/db_root_password.txt`
 * `secrets/wp_admin_password.txt`
@@ -29,5 +30,4 @@ If you need to change or view the passwords, look inside the `secrets/` folder a
 
 ## Checking Service Health
 To verify that all services are running smoothly, open a terminal in the project directory and run:
-```bash
-docker ps
+* **Check that the services are running correctly:** `make status`

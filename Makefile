@@ -1,4 +1,4 @@
-DATA_DIR		:= /home/anpollan/data
+DATA_DIR		:= $(HOME)/data
 MARIADB_DIR		:= $(DATA_DIR)/mariadb
 WORDPRESS_DIR	:= $(DATA_DIR)/wordpress
 DOCKER_COMPOSE	:= ./srcs/docker-compose.yml
@@ -18,8 +18,8 @@ clean:
 	docker compose -f $(DOCKER_COMPOSE) down -v --rmi all --remove-orphans
 
 fclean: clean
-	sudo rm -rf /home/anpollan/data/mariadb/
-	sudo rm -rf /home/anpollan/data/wordpress/
+	sudo rm -rf $(HOME)/data/mariadb/
+	sudo rm -rf $(HOME)/data/wordpress/
 
 logs:
 	docker compose -f $(DOCKER_COMPOSE) logs
@@ -29,4 +29,4 @@ status:
 
 re: fclean all
 
-.PHONY: all up down clean fclean logs check re 
+.PHONY: all up down clean fclean logs status re 

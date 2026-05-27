@@ -14,10 +14,18 @@ up:
 down:
 	docker compose -f $(DOCKER_COMPOSE) down
 
-fclean:
+clean:
 	docker compose -f $(DOCKER_COMPOSE) down -v --rmi all --remove-orphans
+
+fclean: clean
 	sudo rm -rf /home/anpollan/data/mariadb/
 	sudo rm -rf /home/anpollan/data/wordpress/
+
+logs:
+	docker compose -f $(DOCKER_COMPOSE) logs
+
+check:
+	docker compose -f $(DOCKER_COMPOSE) ps
 
 re: fclean all
 

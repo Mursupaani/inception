@@ -1,0 +1,13 @@
+# Ignore version control systems
+.git
+.gitignore
+
+# Ignore OS-specific clutter
+.DS_Store
+.directory
+Thunbs.db
+
+# Ignore text editor temporary swap files
+*.swp
+*~
+.nfs*

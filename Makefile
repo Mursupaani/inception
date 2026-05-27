@@ -24,7 +24,7 @@ fclean: clean
 logs:
 	docker compose -f $(DOCKER_COMPOSE) logs
 
-check:
+status:
 	docker compose -f $(DOCKER_COMPOSE) ps
 
 re: fclean all

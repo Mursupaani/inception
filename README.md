@@ -57,7 +57,9 @@ https://dev.to/alejiri/docker-nginx-wordpress-mariadb-tutorial-inception42-1eok
 GitHub repo and guide for Inception tutorial by TanjaMenkovic:  
 https://github.com/TanjaMenkovic/inception  
 
-## AI Usage:
-- AI was used to create a solution that is combining ideas from official documentation, the guides, my thoughts and best practices accorging to the LLM (Google Gemini Pro).
-- Explaining different contexts of the project.
-- Especially the creation of the scripts configuring the services relies heavily on AI.
+## AI  Usage:
+- Model used: Google Gemini Pro.
+- Used extensively to create a solution that is combining ideas from official Docker documentation, the before mentioned guides, best practices and my own thoughts.
+- Used for explaining different contexts of the project.
+- Used for debugging and finding optimizations.
+- Especially the creation of the config files and scripts setting up the individual services relied heavily on AI.

@@ -1,6 +1,3 @@
-This file is written for an end-user or system administrator who just needs to know how to use and monitor the stack.
-
-```markdown
 # User Documentation
 
 ## Provided Services
@@ -22,17 +19,25 @@ To manage the infrastructure, use the provided `Makefile` located at the root of
 
 ## Locating and Managing Credentials
 To use the project, you have to create a .env file inside the srcs/ directory and have these environment variables defined e.g. as follows:
+```
 DOMAIN_NAME=anpollan.42.fr
 WORDPRESS_TITLE=inception
 WORDPRESS_DB_NAME=inception
 WORDPRESS_DB_USER=anpollan
 WORDPRESS_USER=anpollan_editor
-WORDPRESS_USER_EMAIL=antti.pollanen89@gmail.com
+WORDPRESS_USER_EMAIL=anpollan@email.com
 WORDPRESS_ADMIN=boss_anpollan
-WORDPRESS_ADMIN_EMAIL=anpollan@student.hive.fi
+WORDPRESS_ADMIN_EMAIL=anpollan@adminemail.fi
 WORDPRESS_DB_HOST=mariadb
+```
 
-* **Make sure that your /etc/hosts file maps ip 127.0.0.1 to the same DOMAIN_NAME as above e.g.  127.0.0.1 anpollan.42.fr** 
+**Make sure that your /etc/hosts file maps ip 127.0.0.1 to the same DOMAIN_NAME as above e.g.
+127.0.0.1 anpollan.42.fr**
+```bash
+sudo nano /etc/hosts
+# Add the following line:
+127.0.0.1    anpollan.42.fr
+```
 
 For security reasons, passwords are not stored in the repository. They are managed via Docker Secrets.
 Create the following files and add your desired passwords. If you ever need to change or view the passwords, look inside the `secrets/` folder at the root of the project:
